@@ -121,7 +121,7 @@ snippet setter "PHP Class Setter" b
 /**
  * Setter for $1
  *
- * @param ${2:string} $$1                                                                                                                               
+ * @param ${2:string} $$1
  * @return ${3:`!p snip.rv=snip.basename`}
  */
 public function set${1/\w+\s*/\u$0/}(${4:${2/(void|string|int|integer|double|float|object|boolear|null|mixed|number|resource)|(.*)/(?1::$2 )/}}$$1)
@@ -310,7 +310,7 @@ if m:
  */
 interface $1
 {
-	public function ${3:someFunction}();$4                                                                                                              
+	public function ${3:someFunction}();$4
 }
 endsnippet
 
