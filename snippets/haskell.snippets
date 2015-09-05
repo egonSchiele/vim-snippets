@@ -90,3 +90,54 @@ snippet let
 snippet where
 	where
 		${1:fn} = ${0:undefined}
+
+snippet tr
+	import qualified Debug.Trace as D
+
+snippet mon
+	import Control.Monad
+
+snippet app
+	import Control.Applicative
+
+snippet t
+	import qualified Data.Text as T
+
+snippet tl
+	import qualified Data.Text.Lazy as TL
+
+snippet bs
+	import qualified Data.ByteString.Char8 as BS
+
+snippet lbs
+	import qualified Data.ByteString.Lazy.Char8 as LBS
+
+snippet over
+	{-# LANGUAGE OverloadedStrings #-}
+
+snippet temp
+	{-# LANGUAGE TemplateHaskell #-}
+
+snippet lang
+	{-# LANGUAGE ${1} #-}
+
+snippet <
+	<*> v .: "${1}"
+
+snippet fromjson
+	instance FromJSON ${1} where
+		parseJSON (Object v) = ${2} <$> v .: "${3}"
+
+snippet map
+	import qualified Data.Map as M
+
+snippet show
+	deriving (Show)
+snippet set
+	import qualified Data.Set as S
+
+snippet put
+	putStrLn ${1}
+
+snippet pr
+	print ${1}
