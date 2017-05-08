@@ -1,0 +1,35 @@
+snippet req
+	var ${1} = require('${2:your-etsy/shop/currency}');
+snippet desc
+	describe("${1}", function() {
+		${2}
+	});
+snippet it
+	it("${1}", function() {
+		${2}
+	});
+snippet def
+	define([${1}], function(${2}) {
+
+	});
+snippet en
+	Etsy.Context.featureIsEnabled("${1}")
+
+snippet fl
+	localization.currency_library
+snippet c
+	console.log(${1});
+snippet amd
+	if (typeof define === 'function' && define.amd) {
+		define('${1:file path}', [], function() {
+			return ${2:window.Etsy.Money};
+		});
+	}
+
+snippet for
+		for (var i = 0; i < ${1}.length; i++) {
+		    ${2}
+		}
+
+snippet each
+		_.each(${1}, function(${2}) {

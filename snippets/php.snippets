@@ -38,7 +38,7 @@ snippet i
 snippet t.
 	$this->
 snippet f
-	function ${1}(${3}) {
+	public function ${1}(${3}) {
 		${0}
 	}
 # method
@@ -598,18 +598,79 @@ snippet tc
 
 snippet pp
 	print_r(${1});
-
+snippet fe
+	Feature::isEnabled('localization.new_address_validation')
 snippet en
 	Testing_EtsyConfig::enableFeature("${1}");
 snippet dis
 	Testing_EtsyConfig::disableFeature("${1}");
 snippet fl
 	localization.currency_library
-
 snippet mf
 	Money_Formatter::
-snippet andcode
-	formatForLocaleWithSymbolAndCode
-snippet symbol
-	formatForLocaleWithSymbol
+snippet conf
+	<?php
+	$tests = array(
+			"tests/etsy/money/new_formatter.js"
+	);
 
+	$sources = array(
+			"lib/almond.js",
+			"common/etsy.context.js",
+			"etsy/money/cldr.js",
+	);
+
+	$context = ['feature' => ['localization.currency_library' => true]];
+snippet neb
+	nebllessur
+snippet tr
+	$translator->translateMsg("${1}", "${2}");
+snippet tes
+	<?php
+
+	class ${1} extends PHPUnit_Framework_TestCase {
+
+			public function setUp() {
+					${2}
+			}
+	}
+
+snippet loc
+	$locale = new EP_Locale("USD", "en", "US");
+snippet zz
+	Testing_EtsyConfig::disableFeature("localization.currency_library");
+
+snippet statsd
+	StatsD::increment($key);
+
+snippet l
+	Logger::error(${1});
+
+snippet bt
+	$bt = new Dev_Backtrace();
+	Logger::error(">>>>>>> " . $bt->format());
+
+snippet param
+	@param string|null $var_name
+
+snippet ret
+	@return string|null
+
+snippet boot
+	require "bootstrap.php";
+
+snippet orm
+	$finder = EtsyORM::getFinder("${1}");
+
+snippet setup
+	public function setUp() {
+	    ${1}
+	}
+snippet po
+	$input->post("${1}", "DataType_String");
+snippet ve
+	$sql = "${1}";
+	$rows = EtsyORM::vertica_query($sql, []);
+
+snippet js
+	json_encode(${1}, JSON_PRETTY_PRINT)
