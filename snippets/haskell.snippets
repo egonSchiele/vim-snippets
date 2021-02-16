@@ -39,9 +39,8 @@ snippet class
 	class ${1:Class} a where
 		${0}
 snippet module
-	module `substitute(substitute(expand('%:r'), '[/\\]','.','g'),'^\%(\l*\.\)\?','','')` (
-	)	where
-	`expand('%') =~ 'Main' ? "\n\nmain = do\n  print \"hello world\"" : ""`
+	module ${1} where
+	  ${2}
 
 snippet const
 	${1:name} :: ${2:a}
@@ -131,7 +130,10 @@ snippet fromjson
 snippet map
 	import qualified Data.Map as M
 
-snippet show
+snippet sh
+	deriving (Show)
+
+snippet der
 	deriving (Show)
 snippet set
 	import qualified Data.Set as S
@@ -139,5 +141,11 @@ snippet set
 snippet put
 	putStrLn ${1}
 
+snippet put
+	putStrLn ${1}
+
 snippet pr
 	print ${1}
+
+snippet p
+	parserTrace "${1}"

@@ -738,7 +738,7 @@ snippet script
 	<script type="text/javascript" charset="utf-8">
 		${0}
 	</script>
-snippet scripts
+snippet js
 	<script src="${0}.js"></script>
 snippet scriptt
 	<script type="${1}" id="${2}">
@@ -877,3 +877,5 @@ snippet video
 	<video src="${1} height="${2}" width="${3}" preload="${5:none}" autoplay="${6:autoplay}>${7}</video>
 snippet wbr
 	<wbr />
+snippet <
+	<$1>${2:${VISUAL}}</$1>
