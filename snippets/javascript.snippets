@@ -35,8 +35,9 @@ snippet each
 		_.each(${1}, function(${2}) {
 
 snippet react
-	import React from "react";
-	import ReactDOM from "react-dom";
+	import * as React from "react";
+	import * as ReactDOM from "react-dom";
+	import { createStore } from "react-dom";
 
 	const Index = () => {
 	  return <div>Hello React!</div>;
