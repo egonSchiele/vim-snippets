@@ -46,3 +46,57 @@ snippet .new
 	.new({className: "$1"}) do
 		$2
 	end
+
+snippet cont
+	class ${1:`EtsyFile()`} implements Neu_Controller where
+	use Neu_Traits_ViewRenderer
+
+	handle :: HTTP_Request -> HTTP_Response -> void
+	handle request response := $0
+
+snippet view
+	class ${1:`EtsyFile()`} implements Neu_View where
+	use Neu_Traits_DefaultView
+
+	TEMPLATE = 'foo.mustache'
+
+	getCssFiles :: array
+	getCssFiles := []
+
+	getJsFiles :: array
+	getJsFiles := []
+
+	getTemplateData :: array
+	getTemplateData := []
+
+snippet api
+	class ${1:`EtsyFile()`} implements Api_Endpoint_Component where
+	use Api_Endpoint_DefaultImplementation
+
+	route :: string
+	@@route := 'POST /url/:shop_id'
+
+	desc :: string
+	@@desc := 'my desc'
+
+	includedServices :: array
+	@@includedServices := [Api_Service.AJAX]
+
+	resultType :: string
+	@@resultType := Api.NO_RESULT
+
+	declareInput :: Api_Input_Interface -> void
+	@@declareInput input := input.get('shop_id', new DataType_ID())
+
+	handle :: Api_Input -> Api_Response -> void
+	@@handle input response := Api_Response.httpCode(response, HTTP_Response.HTTP_STATUS_OK)
+
+snippet class
+	class ${1:`EtsyFile()`} where
+	$2
+
+snippet orm
+	finder = EtsyORM.getFinder("$1")
+
+snippet fe
+	Feature.isEnabled("$1")
