@@ -1,3 +1,37 @@
+snippet rc
+	class $1 extends React.Component {
+		$2
+	}
+
+snippet ren
+	render props := $1
+
+snippet c
+	console.log($1)
+
+snippet log
+	console.log($1)
+
+snippet con
+	constructor props := $1
+
+snippet react
+	import * as React from "react"
+	import * as ReactDOM from "react-dom"
+
+	Index := <div>Hello React!</div>
+
+	ReactDOM.render(Index.new(), document.getElementById("root"))
+
+snippet ex
+	export default
+
+snippet cl
+	$1.new({className: "$2"}) $3
+
+snippet get
+	document.getElementByID($1)
+
 snippet do
 	do
 	  $1
@@ -9,6 +43,6 @@ snippet dof
 	end
 
 snippet .new
-	.new({$1}) do
+	.new({className: "$1"}) do
 		$2
 	end
